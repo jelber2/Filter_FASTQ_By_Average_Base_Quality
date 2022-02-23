@@ -42,7 +42,7 @@ fn main() {
      let percentile2 = percentile*100.0;
      eprintln!("{}            = {}th", percs.percentile(percentile).unwrap().unwrap(), percentile2);
  }
- eprintln!("{} total reads\n{} kept reads at average Q{}", sum_records, sum_kept_records, quality);
+ eprintln!("{} total reads\n{} kept reads at average Q{}\n", sum_records, sum_kept_records, quality);
 }
 
  fn mean_error_probability(quality_bytes: &[u8]) -> f32 {
