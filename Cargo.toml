@@ -1,5 +1,5 @@
 [package]
-name = "FilterAverageQuality"
+name = "Filter_FASTQ_By_Average_Base_Quality"
 version = "0.1.0"
 edition = "2021"
 
