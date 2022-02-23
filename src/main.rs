@@ -16,7 +16,7 @@ fn main() {
  let mut sum_records = 0;
  let mut sum_kept_records = 0;
  let mut vec = Vec::new();
- eprintln!("\n");
+ eprintln!("\nPHRED Quality =  Percentile");
 
  while let Ok(()) = reader.read(&mut record) {
      if record.is_empty() {
@@ -40,7 +40,7 @@ fn main() {
 
  for percentile in arr {
      let percentile2 = percentile*100.0;
-     eprintln!("Q{} = {}th percentile", percs.percentile(percentile).unwrap().unwrap(), percentile2);
+     eprintln!("{}            = {}th", percs.percentile(percentile).unwrap().unwrap(), percentile2);
  }
  eprintln!("{} total reads\n{} kept reads at average Q{}", sum_records, sum_kept_records, quality);
 }
