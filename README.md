@@ -38,7 +38,26 @@ PHRED Quality =  Percentile
 For a real use case, one might do
 
 ```bash
-zcat example.fastq.gz |./target/release/Filter_FASTQ_By_Average_Base_Quality 30 |pigz > Q30.fastq.gz
+zcat 0.pbccs-6.3.0.icecreamfinder-38.94.fastq.gz |~/git/Filter_FASTQ_By_Average_Base_Quality/target/release/Filter_FASTQ_By_Average_Base_Quality 30 > /dev/null
+
+PHRED Quality =  Percentile
+19.987514            = 0th
+20.295076            = 1.25th
+20.589355            = 2.5th
+21.206745            = 5th
+22.52666            = 10th
+25.032253            = 20th
+26.204447            = 25th
+31.818943            = 50th
+36.49015            = 75th
+41.000195            = 100th
+14411 total reads
+8397 kept reads at average Q30
 ```
 
-One could run the command initially and then copy and paste the lower cut-off to filter by and replace that value with 30 to filter say by the 5th percentile.
+Then,
+```bash
+zcat 0.pbccs-6.3.0.icecreamfinder-38.94.fastq.gz |~/git/Filter_FASTQ_By_Average_Base_Quality/target/release/Filter_FASTQ_By_Average_Base_Quality 21.206745 |gzip > No-5th-percentile.fastq.gz
+```
+
+To filter out the lower 5th percentile.
